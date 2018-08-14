@@ -1,0 +1,34 @@
+.loading {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top:80px;
+  .icon {
+  	width: 77px;
+  	height: 77px;
+  	background: #D6EE26;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	background: #D6EE26;
+  	margin: -38px 0 0 -38px;
+  	animation: loadingSpin 1.5s infinite linear;
+  	background: url('../../img/loading.png'); }
+  .text {
+  	position: absolute;
+  	top: calc(50% + 56px);
+  	width: 100%;
+  	text-align: center;
+		margin-top: 60px;
+  }
+}
+
+@keyframes loadingSpin {
+  0%  {
+  	transform: rotate(0deg);
+  }
+  100% {
+  	transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,56 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        
+        <input id="name" type="text" class="validate"
+               [(ngModel)]="user.name" formControlName="name"
+               [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid"
+        >
+        <label for="name"
+               [class.active]="user.name"
+               data-error="Name is required and needs to contain at least 3 chars">
+          Name
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        
+        <input id="login" type="text" class="validate"
+               [(ngModel)]="user.login" formControlName="login"
+               [class.invalid]="form.controls['login'].touched && !form.controls['login'].valid"
+        >
+        <label for="login"
+               [class.active]="user.login"
+               data-error="Login is required and needs to contain at least 3 chars">
+          Login
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate"
+               [(ngModel)]="user.email" formControlName="email"
+               [class.invalid]="form.controls['email'].touched && !form.controls['email'].valid">
+        <label for="email"
+               [class.active]="user.email"
+               data-error="Invalid Email">
+          Email
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate"
+               [(ngModel)]="user.password" formControlName="password">
+        <label for="password" [class.active]="user.password">Password</label>
+      </div>
+    </div>    
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>
